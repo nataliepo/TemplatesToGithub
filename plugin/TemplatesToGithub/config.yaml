@@ -1,0 +1,4 @@
+id: TemplatesToGithub
+name: TemplatesToGithub
+description: This plugin provides supplemental library for command-line exporting and importing of MT templates to github.com repositories.
+version: 1.0
