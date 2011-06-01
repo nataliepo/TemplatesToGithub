@@ -22,7 +22,8 @@ This plugin only provides command-line tools; it does not extend any user-facing
 1. Deploy the TemplatesToGithub plugin and the github_export_templates.pl and github_import_templates.pl tools to both ALPHA and BETA.
 
 2. Run the export script on the LIVE instance as a backup. 
-      perl tools/github_export_templates --output_dir=/full/path/to/output/dir
+      
+         perl tools/github_export_templates --output_dir=/full/path/to/output/dir
       
    
 3. Check the resulting LIVE files (in that /full/path/to/output/dir path) into your favorite code repository in its own branch.
@@ -37,13 +38,15 @@ This plugin only provides command-line tools; it does not extend any user-facing
 
 8. TEST OUT an import of templates into the LIVE environment with the following command:
 
-      perl tools/github_import_templates.pl --input_dir=/full/path/to/staging/templates 
+
+         perl tools/github_import_templates.pl --input_dir=/full/path/to/staging/templates 
       
 9.  Resolve any errors that happen in Step 8; repeat Step 8 until the script finishes successfully.  Errors will be displayed if a template archive existed on STAGING but not LIVE, if a blog existed on STAGING but not LIVE; if a template cannot be found, etc.
 
 10. Execute the template import into the LIVE environment:
 
-      perl tools/github_import_templates.pl --input_dir=/full/path/to/staging/templates --apply_changes
+      
+         perl tools/github_import_templates.pl --input_dir=/full/path/to/staging/templates --apply_changes
       
 
 11. Revert to the LIVE templates (exported in Step 2) in case of emergency.
