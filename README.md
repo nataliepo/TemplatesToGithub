@@ -19,11 +19,11 @@ This plugin only provides command-line tools; it does not extend any user-facing
    
    
 ## Process
-1. Deploy the TemplatesToGithub plugin and the github_export_templates.pl and github_import_templates.pl tools to both ALPHA and BETA.
+1. Deploy the TemplatesToGithub plugin and the github_export_templates.pl and github_import_templates.pl tools to both LIVE and STAGING.
 
 2. Run the export script on the LIVE instance as a backup. 
       
-         perl tools/github_export_templates --output_dir=/full/path/to/output/dir
+         perl tools/github_export_templates.pl --output_dir=/full/path/to/output/dir
       
    
 3. Check the resulting LIVE files (in that /full/path/to/output/dir path) into your favorite code repository in its own branch.
