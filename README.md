@@ -18,7 +18,7 @@ This plugin only provides command-line tools; it does not extend any user-facing
    
 ## Process
 
-It is extremely on multi-developer projects that everyone who may commit to the Github repository understand the following workflow.  If this process is adopted, all commits involving changes to template text files must be made from a complete set of directories created or updated using github_export_templates.pl.  If execution of github_export_templates.pl is omitted, this may result in templates.manifest becoming out of sync with the template text files.
+It is extremely important on multi-developer projects that everyone who may commit template code to the Github repository understands and uses the following workflow.  If this process is adopted, all commits involving changes to template text files must be made from a complete set of directories created or updated using github_export_templates.pl.  If execution of github_export_templates.pl is omitted on either the LIVE or STAGING server, this may result in templates.manifest becoming out of sync with the template text files.
 
 1. Deploy the TemplatesToGithub plugin and the github_export_templates.pl and github_import_templates.pl tools to both LIVE and STAGING.
 
