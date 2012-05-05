@@ -1,12 +1,10 @@
 # SUMMARY
 
-This plugin facilitates the movement of custom templatesets in Movable Type 4 between instances with the benefit of easy insertion into a code repository system.  
+This plugin facilitates the movement of custom template sets in Movable Type 4 between instances with the benefit of easy insertion into a code repository system.  
 
+The export script exports the instance's full set of templates, including the Global Templates, into a directory of text files, organized per blog per template type, with a templates.manifest file (formerly known as info.txt) providing as the index.  The export script does not modify an MT instance's templates at all; it only reads from the database.  
 
-The export script exports the instance's full set of templates, including the Global Templates, into a directory of text files, organized per blog per template type, with an info.txt file providing as the index.  The export script does not modify an MT instance's templates at all; it only reads from the database.  
-
-The import script only modifies live content with the --apply_changes flag.  Without that flag, the script prints status messages and any potential errors with the intended import.  The import script does not preserve template_id's between environments; it keys off of blog name, template name, and output file.  
-
+The import script only modifies live content with the --apply_changes flag.  Without that flag, the script prints status messages and any potential errors with the intended import.  The import script does not preserve template_id's between environments; it keys off of blog name, template name, and output file.
 
 This plugin only provides command-line tools; it does not extend any user-facing or editorial functionality of Movable Type.  
 
@@ -19,6 +17,9 @@ This plugin only provides command-line tools; it does not extend any user-facing
    
    
 ## Process
+
+It is extremely on multi-developer projects that everyone who may commit to the Github repository understand the following workflow.  If this process is adopted, all commits involving changes to template text files must be made from a complete set of directories created or updated using github_export_templates.pl.  If execution of github_export_templates.pl is omitted, this may result in templates.manifest becoming out of sync with the template text files.
+
 1. Deploy the TemplatesToGithub plugin and the github_export_templates.pl and github_import_templates.pl tools to both LIVE and STAGING.
 
 2. Run the export script on the LIVE instance as a backup. 

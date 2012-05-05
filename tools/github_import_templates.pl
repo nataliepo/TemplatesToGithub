@@ -112,7 +112,7 @@ sub import_blog_templates {
    my %template_change_counter = TemplatesToGithub::Util->TEMPLATE_TYPES;
 	
 	# suck in imported templates
-	open (INPUT, "< $input_dir/info.txt");
+	open (INPUT, "< $input_dir/templates.manifest");
    my $whole_file = "";
    my $line = <INPUT>;
    while ($line) {
