@@ -36,7 +36,7 @@ my $result = GetOptions(
 $output_dir = TemplatesToGithub::Util::create_directory($output_dir);
 
 # clear info file it if exists.
-unlink("$output_dir/info.txt");
+unlink("$output_dir/templates.manifest");
 
 # for each blog, dump their templates.
 my $blog_iter = MT::Blog->load_iter();
@@ -46,7 +46,7 @@ while ( my $blog = $blog_iter->() ) {
 	      $blog->id, 
 	      $blog->name, 
 	      $output_dir,
-	      "info.txt"));
+	      "templates.manifest"));
 }
 
 # repeat for the global templates.
@@ -54,9 +54,9 @@ push(@final_summary, export_blog_templates(
       0, 
       TemplatesToGithub::Util->GLOBAL_BLOG_NAME, 
       $output_dir,
-      "info.txt"));
+      "templates.manifest"));
 
-#open (OUTPUTINFO, ">>$output_dir/info.txt");
+#open (OUTPUTINFO, ">>$output_dir/templates.manifest");
 #print OUTPUTINFO encode_json(\@final_summary) . "\n";
 #close OUTPUTINFO;
 
